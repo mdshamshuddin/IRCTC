@@ -9,6 +9,8 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 
@@ -31,6 +33,11 @@ public class BaseClass {
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		
 	}
+	@AfterClass
+	public void TearDown() {
+		driver.close();
+		driver.quit();
+	}
 
 	@BeforeMethod
 	public void Login() throws InterruptedException {
@@ -47,6 +54,11 @@ public class BaseClass {
 		hp.Captcha_txt(captchaText);
 		hp.SignIn();
 		sc.close();
+	}
+	@AfterMethod
+	public void Logout() {
+		HomePage hp = new HomePage(driver);
+		hp.Logout();
 	}
 	
 	

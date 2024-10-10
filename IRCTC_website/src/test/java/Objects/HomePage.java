@@ -20,6 +20,9 @@ public class HomePage extends BasePage {
 	WebElement Captcha_txt;
 	@FindBy(xpath = "//button[@style='padding: 10px 14px;']")
 	WebElement Sign_in_btn;
+	@FindBy(xpath = "//a[@aria-label='Click here Logout from application']")
+	WebElement Logout_btn;
+	
 	
 
 	public void Loginbtn() {
@@ -36,6 +39,9 @@ public class HomePage extends BasePage {
 	}
 	public void SignIn() {
 		Sign_in_btn.click();
+	}
+	public void Logout() {
+		Logout_btn.click();
 	}
 	
 }

@@ -43,8 +43,8 @@ public class BaseClass {
 	public void Login() throws InterruptedException {
 		HomePage hp = new HomePage(driver);
 		hp.Loginbtn();
-		hp.UserName("mdshamshuddin175");
-		hp.Password("Shams@12345");
+		hp.UserName("Username");
+		hp.Password("password");
 		
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Enter the CAPTCHA text displayed on the screen:");
